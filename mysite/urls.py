@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from appsite.views import homepage, showpost
+from appsite.views import homepage, showpost ,carpage
 
 urlpatterns = [
     url(r'^$', homepage),
     url(r'^post/(\w+)$', showpost),
     url(r'^admin/', admin.site.urls),
+    url(r'^car', carpage),
 ]

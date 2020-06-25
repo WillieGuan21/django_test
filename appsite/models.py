@@ -12,3 +12,14 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Count(models.Model):
+    year=models.CharField(max_length=4)
+    name=models.CharField(max_length=20)
+    price=models.PositiveIntegerField()
+    count=models.CharField(max_length=4)
+    last=models.CharField(max_length=4)
+
+    def __unicode__(self):
+        return self.name
+

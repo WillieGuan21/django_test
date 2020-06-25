@@ -2,7 +2,8 @@ from django.template.loader import get_template
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from datetime import datetime
-from .models import Post
+from .models import Post, Count
+import random
 
 # Create your views here.
 
@@ -22,3 +23,14 @@ def showpost(request, slug):
             return HttpResponse(html)
     except:
         return redirect('/')
+
+def carpage(request):
+    template=get_template('car.html')
+    cars=Count.objects.all()
+    years=[
+        '1994',
+        '2008',
+        '1896'
+    ]
+    html=template.render({'year':(years)})
+    return HttpResponse(html)
